@@ -53,7 +53,7 @@ public:
 	void Add(string n){
 		Node *current = first;
 		Node *newlink = new Node;
-		if (first==NULL){//если первый добавляем
+		if (first==NULL){//если первый добавляем // 
 			num=0;
 			first=newlink;
 			newlink->next=NULL;
