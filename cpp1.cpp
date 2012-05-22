@@ -1,7 +1,12 @@
-
-#include "conio.h"
+#include "stdafx.h"
 #include <iostream>
 #include <string>
+#include <ctime>
+#include <iomanip>
+#include <conio.h>
+#include <fstream>
+#include <iostream>
+#include <assert.h>
 
 using namespace std;
 
@@ -10,7 +15,74 @@ struct menu	{  // Название структуры
 	string name; // названия разделов @_@
 	string mass[100]; 
 };
+/*-----------------------------------------------------------------------------------------------
+a2b1c1 d3e1 d2e2
+a2 = двунаправленны
+b1 = без голого элемента
+c1 = не кольцевой
 
+d3 = удаление  
+e1 = первого (по ключу)
+
+d2 = редактирование
+e2 = по ключу 
+
+
+d1 = добавление
+e3 = добавление по среднему
+
+Нужно вбить вместо лишних пунктов --в разработке-- и я считаю, нужно что-то делать с оформлением т.к. после того ,если эту прогу загрузить
+этими файлами списками будет дико лагать и это будет не совсем выгодно, да и я думаю сначала нужно сделать по среднему а потом уже по первому или даже улучшить и сделать оба с запросом
+
+-осталось 3 дня успею ли?
+-нет
+-плохо значит мне?
+-да, ты огребаешь.
+
+*/
+//Листовка (не пустой должен быть)
+struct list{
+	list *next;
+	string data;
+	int id;
+	list *prev;//предыдущий
+};
+
+//Классы
+class Bigcube{
+	list *first;
+	int number;
+public:
+	Bigcube():first(NULL){}
+	void Add(string nova){
+		list *current = first; 
+		list *newlink = new list;
+		if (first==NULL){  //если первый добавляем // 
+			number=1;
+			first=newlink;
+
+			newlink->next=NULL; //обнуление
+			newlink->prev=NULL; //обнуление
+
+			newlink->data=nova; //дата = днова
+			newlink->id=number; // цифра к днове
+
+			number++;
+		}else{
+			while (current->next!=NULL) {//идем до последнего
+				current=current->next;
+			}
+			current->next=newlink; //последний теперь указывает на новый
+			first->prev=newlink; //голова перемещается на следующий
+
+			newlink->next=NULL; //на новый линкер ставится нуль
+			newlink->prev=current; //на предыдущий ставится последний
+
+			newlink->data=nova; // на стринг ставится наименование
+			newlink->id=number; // и цифра
+			number++; //смещение на след цифру
+		}
+	}
 
 int main()
 {	
