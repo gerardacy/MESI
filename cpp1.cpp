@@ -419,5 +419,6 @@ return 0;
 -add string rabotaet no nujno eshe podkorrektirovat' cikl
 -show rabotaet otli4no
 -nujno vpisat' ru language
-
+-add func by first can return
+-first complete.
 */
