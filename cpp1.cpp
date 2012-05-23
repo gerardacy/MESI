@@ -56,7 +56,7 @@ class Bigcube{
 public:
 	Bigcube():first(NULL){}
 
-	//---------------------------------------ADD-IN by key-----------------------------------//
+	//---------------------------------------ADD-IN by last-----------------------------------//
 	
 	void Add(string nova)
 	{
@@ -90,6 +90,7 @@ public:
 		}
 	}
 
+	//---------------------------------------ADD-IN by middle--------------------------------//
 
 	void Add2 (string nova){
 	list *current = first;
@@ -142,6 +143,40 @@ public:
 		}
 }
 
+	//--------------------------------------ADD-IN by first---------------------------------//
+	
+	void Add3(string nova)
+	{
+		list *current = first; 
+		list *newlink = new list;
+		if (first==NULL){  //если первый добавляем // 
+						number=1;
+						first=newlink;
+
+						newlink->next=first; //обнуление
+						newlink->prev=NULL; //обнуление
+
+						newlink->data=nova; //дата = днова
+						newlink->id=number; // цифра к днове
+
+						number++;
+		
+		}else{
+			  while (current->next!=NULL){							//идем до последнего
+											current=current->next;
+									  	 }
+			  current->next=newlink; //последний теперь указывает на новый
+			  first->prev=newlink; //голова перемещается на следующий
+
+			  newlink->next=NULL; //на новый линкер ставится нуль
+			  newlink->prev=current; //на предыдущий ставится последний
+
+			  newlink->data=nova; // на стринг ставится наименование
+			  newlink->id=number; // и цифра
+
+			  number++; //смещение на след цифру
+		}
+	}
 
 	//--------------------------------------SHOW--------------------------------------------------//
 		void Show(){
@@ -157,6 +192,17 @@ public:
 				   } while (current!=NULL);}
 				}
 	
+
+	//---------------------------------------EDIT---------------------------------------------//
+
+		void gedit(int idnew,string datanew){
+		list *current = first;
+		do {
+			if(idnew==(current->id)){
+				current->data=datanew;}
+				current=current->next;
+		} while (current!=NULL);
+	}
 
 
   
@@ -214,7 +260,7 @@ int main()
 	razd[0].name ="File"; //структура 
 	razd[1].name ="Show";
 	razd[2].name ="Create";
-	razd[3].name ="Show";
+	razd[3].name ="Edit";
 	razd[4].name ="Delete";
 	razd[5].name ="Exit";
 
@@ -350,6 +396,7 @@ int main()
 																				key2=1;
 																				break;
 																		}
+									if (key1==3){
 												if (key2==3)
 															switch (z) {
 																		case 13:
@@ -385,11 +432,28 @@ int main()
 																				 break;
 																				 }
 																		case 48: break;
-
 																		
 												};
-     
-																
+											/*	if (key2==1)
+															switch (z) {
+																		case 13: while(F==false)
+																				 {
+																				cout << "------------------------------" << endl;
+																				cout << " Add one new first element" << endl;																				cout << " Add one new element" << endl;
+																				cout << " New Element's Name:";
+																				cin>>line;//название строки
+																				set->Add3(line);//добавление элемента в список
+																				cout << " New Element added"<<endl;
+																				cout << " Press 0 twice to return" << endl;
+																				cout << "------------------------------" << endl;
+																				system("pause");
+																				newi++;
+																				 break;
+																				 }
+																		case 48: break;
+												};
+    */ 
+												}
 																
 				}
 
@@ -492,5 +556,5 @@ return 0;
 -add by middle func added.
 -need to write this func in case for key2=1, if i'm right.
 -add first - changed into add last
--add middle worked 100%
+-add middle worked 100%		
 */
