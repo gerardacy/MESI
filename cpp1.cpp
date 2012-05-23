@@ -91,7 +91,56 @@ public:
 	}
 
 
+	void Add2 (string n){
+	list *current = first;
+	list *newlink = new list;
+	list *temporary= new list;
+		if(first == NULL)
+		{
+			number=0;
+			newlink->data=nova;
+			newlink->id=number;
+			newlink->next=NULL;
+			newlink->prev=NULL;
+			first=newlink;
+			number++;
+		}
+		else{
+			int amount=0;
+			while (current)//идем до конца 
+			{
+				amount++;
+				current=current->next;
+			}
+			current=first;
 
+			int inview;
+			if (amount%2 ==1)
+			{
+				inview=amount/2;
+			}
+			else 
+			{
+				inview=(amount-1)/2;
+			}
+
+			int score=0;
+			while(score<inview+1)
+			{
+				if (score == inview)
+				{
+					newlink->data=nova;
+					newlink->id=number;
+					number++;
+					newlink->next=current->next;
+					newlink->prev=current;
+					current->next=newlink;
+				}
+				score++;
+				current=current->next;
+			}
+		}
+}
 
 
 	//--------------------------------------SHOW--------------------------------------------------//
@@ -409,7 +458,7 @@ int main()
 getch();
 return 0;
 }
-/*fixer
+/* Note of fixes
 -Rabotaet show
 -Dobavleno sozdanie faila i extractor pravda ya ne ponimau za4em eto, nujno zapihnut' v file punkt nujno narisovat'
 4tonibud's
@@ -420,5 +469,8 @@ return 0;
 -show rabotaet otli4no
 -nujno vpisat' ru language
 -add func by first can return
--first complete.
+-first complete
+-----------------------------
+-add by middle func added.
+-need to write this func in case for key2=1, if i'm right.
 */
