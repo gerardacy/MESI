@@ -91,7 +91,7 @@ public:
 	}
 
 
-	void Add2 (string n){
+	void Add2 (string nova){
 	list *current = first;
 	list *newlink = new list;
 	list *temporary= new list;
@@ -350,12 +350,12 @@ int main()
 																				key2=1;
 																				break;
 																		}
-												if (key2==1)
+												if (key2==3)
 															switch (z) {
 																		case 13:
 																				while(F==false){
 																				cout << "------------------------------" << endl;
-																				cout << " Add one new element" << endl;
+																				cout << " Add one new last element" << endl;
 																				cout << " New Element's Name:";
 																				cin>>line;//название строки
 																				set->Add(line);//добавление элемента в список
@@ -366,6 +366,24 @@ int main()
 																				newi++;
 																				break;
 																				}
+																		case 48: break;
+												};
+												if (key2==2)
+															switch (z) {
+																		case 13: while(F==false)
+																				 {
+																				cout << "------------------------------" << endl;
+																				cout << " Add one new middle element" << endl;																				cout << " Add one new element" << endl;
+																				cout << " New Element's Name:";
+																				cin>>line;//название строки
+																				set->Add2(line);//добавление элемента в список
+																				cout << " New Element added"<<endl;
+																				cout << " Press 0 twice to return" << endl;
+																				cout << "------------------------------" << endl;
+																				system("pause");
+																				newi++;
+																				 break;
+																				 }
 																		case 48: break;
 
 																		
@@ -453,9 +471,9 @@ int main()
 																														else 
 																			cout << 0 << "  " << razd[5].name << "\n";
 					}
-
-	}
-getch();
+		}
+	
+	getch();
 return 0;
 }
 /* Note of fixes
@@ -473,4 +491,6 @@ return 0;
 -----------------------------
 -add by middle func added.
 -need to write this func in case for key2=1, if i'm right.
+-add first - changed into add last
+-add middle worked 100%
 */
