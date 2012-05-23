@@ -1,4 +1,4 @@
-#include "stdafx.h"
+
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -55,6 +55,9 @@ class Bigcube{
 	int number;
 public:
 	Bigcube():first(NULL){}
+
+	//---------------------------------------ADD-IN by key-----------------------------------//
+	
 	void Add(string nova)
 	{
 		list *current = first; 
@@ -86,6 +89,12 @@ public:
 			  number++; //смещение на след цифру
 		}
 	}
+
+
+
+
+
+	//--------------------------------------SHOW--------------------------------------------------//
 		void Show(){
 		list *current = first;
 			if(current==NULL){
@@ -98,13 +107,12 @@ public:
 					current=current->next;
 				   } while (current!=NULL);}
 				}
-		
+	
 
 
-
-	//---------------------------------------
-	//creating file
-	void CreatFile(){
+  
+	//---------------------------------------FILE-----------------------------------------------//
+	void CreateFile(){
 						ofstream out;
 						out.open("New List.txt");
 						list *current = first;
@@ -116,8 +124,7 @@ public:
 	
 												out.close();
 	}
-	//using file
-	       void UseFile(Bigcube *name)
+	void UseFile(Bigcube *name)
 									{
 												ifstream fin;
 												string str;
@@ -136,20 +143,22 @@ public:
 																			}
 								    }
 							fin.close( );
-									}
-		};
-	//-------------------------
+									}};
+
+
+
+	//--------------------------------------MENU-----------------------------------------------//
 int main()
 {	
 	Bigcube *set=new Bigcube;
-	int i=0;
-	string arabold;
-	string arabnew;
+	int newi=0;
+	string line;
+	string linenew;
 
 
 	menu razd[100]; 
-	int K=7; //Количество элементов кароче.
-	int M=6; 
+	int K=6; //Количество элементов кароче.
+	int M=5; 
 	int key1=1; //не очень
 	int key2=1;
 
@@ -158,7 +167,6 @@ int main()
 	razd[2].name ="Create";
 	razd[3].name ="Show";
 	razd[4].name ="Delete";
-	razd[6].name = "1";
 	razd[5].name ="Exit";
 
 				
@@ -184,8 +192,6 @@ int main()
 	razd[2].mass[2]="Last";
 	razd[2].mass[3]="By key";
 	razd[2].mass[4]="Back";
-
-	razd[6].mass[1]="2";
 	
 
 	razd[3].mass[0]="First";
@@ -239,6 +245,8 @@ int main()
 									cout << "0 *" << razd[1].mass[0] << "*\n";
 									set -> Show();
 									}		
+
+
 						if (key1==3|| key1==4|| key1==5) {
 															for (int i=0; i<M-1; i++) 
 																						if (key2==i+1)	cout << i+1 << " *" << razd[key1-1].mass[i] << "*\n";
@@ -249,6 +257,7 @@ int main()
 																																							else 
 																										cout << 0 << "  " << razd[key1-1].mass[4] << "\n";
 															}
+															
 						key2=1;
 
 								do	{
@@ -266,7 +275,7 @@ int main()
 																							default:
 																									break;
 																							}
-
+//круг
 						if (key2>M)
 									key2=1;
 						if (key2<1)
@@ -280,19 +289,32 @@ int main()
 																cout << i+1 <<  " *" << razd[key1-1].mass[i] << "*\n";
 																													else 
 																cout << i+1 <<  "  " << razd[key1-1].mass[i] << "\n";
-												if (key2==6)
+												if (key2==5)
 																cout << 0 << " *" << razd[key1-1].mass[4] << "*\n";
 																													else 
 																cout << 0  <<  "  " << razd[key1-1].mass[4] << "\n";
 					
-												if (key2==7) 
+												if (key2==5) 
 															switch (z) {
 																		case 13:
 																				F=true;
 																				key2=1;
 																				break;
 																		}
-					}
+												if (key2==1)
+															switch (z) {
+																		case 13:
+																				while(F==false){
+																				cout << " New Element's Name - ";
+																				cin>>line;//название строки
+																				set->Add(line);//добавление элемента в список
+																				newi++;
+																				break;}
+												};
+     
+																
+																
+				}
 
 												if (key1==1|| key1==2) {
 																		y=getch();
@@ -384,4 +406,9 @@ return 0;
 4tonibud's
 -Add String doljen zarabotat' nujno dobavit' vizivateli :)
 -ustranena oshibka so skobkoi (class zakrivaetsya skobkoi i ";")
+-------------------------
+-add string rabotaet no nujno eshe podkorrektirovat' cikl
+-show rabotaet otli4no
+-nujno vpisat' ru language
+
 */
