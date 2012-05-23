@@ -557,4 +557,8 @@ return 0;
 -need to write this func in case for key2=1, if i'm right.
 -add first - changed into add last
 -add middle worked 100%		
+-----------------------------
+-add by first into developin'
+-edit by key can be work i think cuz it's easy
+
 */
