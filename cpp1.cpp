@@ -55,7 +55,8 @@ class Bigcube{
 	int number;
 public:
 	Bigcube():first(NULL){}
-	void Add(string nova){
+	void Add(string nova)
+	{
 		list *current = first; 
 		list *newlink = new list;
 		if (first==NULL){  //если первый добавляем // 
@@ -96,7 +97,10 @@ public:
 					cout<<"Number - " << current->id<<"   "<<current->data<<endl;
 					current=current->next;
 				   } while (current!=NULL);}
-	}
+				}
+		
+
+
 
 	//---------------------------------------
 	//creating file
@@ -104,34 +108,44 @@ public:
 						ofstream out;
 						out.open("New List.txt");
 						list *current = first;
-	do{
-		out<<current->data<<"\n";
-		current=current->next;
-	  }
-		while (current!=NULL);
+										do{
+											out<<current->data<<"\n";
+											current=current->next;
+										  }
+											while (current!=NULL);
 	
-		out.close();
+												out.close();
+	}
 	//using file
-	       void UseFile(Bigcube *name){
+	       void UseFile(Bigcube *name)
+									{
 												ifstream fin;
 												string str;
 												string paststring;
 
-			fin.open("New List.txt",ios::in);
-			assert (!fin.fail( ));
+											fin.open("New List.txt",ios::in);
+											assert (!fin.fail( ));
 
-		while (!fin.eof( )){
-							fin >> str;
-							if(str != paststring){
-													name->Add(str);
-													paststring=str;
-												 }
-		                   }
+									while (!fin.eof( ))
+									{
+														fin >> str;
+														if(str != paststring)
+																			{
+																			name->Add(str);
+																			paststring=str;
+																			}
+								    }
 							fin.close( );
-	  }
+									}
+		};
 	//-------------------------
 int main()
 {	
+	Bigcube *set=new Bigcube;
+	int i=0;
+	string arabold;
+	string arabnew;
+
 
 	menu razd[100]; 
 	int K=7; //Количество элементов кароче.
@@ -146,6 +160,8 @@ int main()
 	razd[4].name ="Delete";
 	razd[6].name = "1";
 	razd[5].name ="Exit";
+
+				
 
 	for (int i=0;i<K-1;i++)
 		if (key1==i+1) // 0_0 стрелочник 
@@ -219,8 +235,10 @@ int main()
 
 						if (key1==1) cout << "0 *" << razd[0].mass[0] << "*\n";
 
-						if (key1==2) cout << "0 *" << razd[1].mass[0] << "*\n";
-
+						if (key1==2){
+									cout << "0 *" << razd[1].mass[0] << "*\n";
+									set -> Show();
+									}		
 						if (key1==3|| key1==4|| key1==5) {
 															for (int i=0; i<M-1; i++) 
 																						if (key2==i+1)	cout << i+1 << " *" << razd[key1-1].mass[i] << "*\n";
@@ -356,10 +374,14 @@ int main()
 					}
 
 	}
-
+	
 getch();
 return 0;
 }
-
-
-
+/*fixer
+-Rabotaet show
+-Dobavleno sozdanie faila i extractor pravda ya ne ponimau za4em eto, nujno zapihnut' v file punkt nujno narisovat'
+4tonibud'
+-Add String doljen zarabotat' nujno dobavit' vizivateli :)
+-ustranena oshibka so skobkoi (class zakrivaetsya skobkoi i ";")
+*/
