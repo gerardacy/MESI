@@ -1,4 +1,5 @@
 
+#include "stdafx.h"
 #include <iostream>
 #include <string>
 #include <ctime>
@@ -7,6 +8,11 @@
 #include <fstream>
 #include <iostream>
 #include <assert.h>
+
+#include <stdio.h>
+#include <sstream>
+#include "windows.h"
+#include <time.h>
 
 using namespace std;
 
@@ -51,10 +57,17 @@ struct list{
 
 //Классы
 class Bigcube{
-	list *first;
+	list*first;
+	list*tail;
 	int number;
 public:
 	Bigcube():first(NULL){}
+	
+
+/*	void Bigcube::Init() {
+	first=NULL;
+	tail=NULL;
+} */
 
 	//---------------------------------------ADD-IN by last-----------------------------------//
 	
@@ -145,38 +158,36 @@ public:
 
 	//--------------------------------------ADD-IN by first---------------------------------//
 	
-	void Add3(string nova)
-	{
+void Add3(string nova)
+{ // вставка нового элемента в конец списка
+
+		list* temp = tail;
+
+
 		list *current = first; 
 		list *newlink = new list;
 		if (first==NULL){  //если первый добавляем // 
 						number=1;
 						first=newlink;
 
-						newlink->next=first; 
-						newlink->prev=NULL; 
+						newlink->next=NULL; //обнуление
+						newlink->prev=NULL; //обнуление
 
 						newlink->data=nova; //дата = днова
 						newlink->id=number; // цифра к днове
 
 						number++;
-		
 		}else{
-			  while (current->next!=NULL){							//идем до последнего
-											current=current->next;
-									  	 }
-			  current->next=newlink; 
-			  first->prev=newlink; 
 
-			  newlink->next=NULL; 
-			  newlink->prev=current; 
+		first->prev=tail;
+		newlink->next=first;
+		first=newlink;
+		newlink->data=nova;
+		newlink->id=number;
+		number++;}
+}
 
-			  newlink->data=nova; // на стринг ставится наименование
-			  newlink->id=number; // и цифра
 
-			  number++; //смещение на след цифру
-		}
-	}
 
 	//--------------------------------------SHOW--------------------------------------------------//
 		void Show(){
@@ -193,7 +204,7 @@ public:
 				}
 	
 
-	//---------------------------------------EDIT---------------------------------------------//
+	//---------------------------------------EDIT by key---------------------------------------------//
 
 		void gedit(int idnew,string datanew){
 		list *current = first;
@@ -252,6 +263,10 @@ int main()
 	string line;
 	string linenew;
 	int id;
+	/*int error;
+	Bigcube p1;
+	p1.Init();
+	list enter; */
 //----------------------------------------------------------------------//
 
 	menu razd[100]; 
@@ -437,7 +452,7 @@ int main()
 																		case 48: break;
 																		
 												};
-											/*	if (key2==1)
+												if (key2==1)
 															switch (z) {
 																		case 13: while(F==false)
 																				 {
@@ -455,7 +470,7 @@ int main()
 																				 }
 																		case 48: break;
 												};
-    */ 
+     
 												}
 									if (key1==4)
 												{
@@ -587,4 +602,8 @@ return 0;
 -edit by key can be work i think cuz it's easy
 -edit by key worked but not originally
 -i think need to make id-shower for editin' and block some actions in editin' 
+-----------------------------
+-edit by key should be more effective
+-add by first worked 100%
+-now we have new constants for changin' actions
 */
