@@ -305,11 +305,18 @@ int main()
 															switch (z) {
 																		case 13:
 																				while(F==false){
-																				cout << " New Element's Name - ";
+																				cout << "------------------------------" << endl;
+																				cout << " Add one new element" << endl;
+																				cout << " New Element's Name:";
 																				cin>>line;//название строки
 																				set->Add(line);//добавление элемента в список
+																				cout << " New Element added"<<endl;
+																				cout << "------------------------------" << endl;
+																				system("pause");
 																				newi++;
-																				break;}
+																				break;
+																				}
+																		
 												};
      
 																
