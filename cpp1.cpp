@@ -48,6 +48,7 @@ struct list{
 	list *prev;//предыдущий
 };
 
+
 //Классы
 class Bigcube{
 	list *first;
@@ -58,32 +59,77 @@ public:
 		list *current = first; 
 		list *newlink = new list;
 		if (first==NULL){  //если первый добавляем // 
-			number=1;
-			first=newlink;
+						number=1;
+						first=newlink;
 
-			newlink->next=NULL; //обнуление
-			newlink->prev=NULL; //обнуление
+						newlink->next=NULL; //обнуление
+						newlink->prev=NULL; //обнуление
 
-			newlink->data=nova; //дата = днова
-			newlink->id=number; // цифра к днове
+						newlink->data=nova; //дата = днова
+						newlink->id=number; // цифра к днове
 
-			number++;
+						number++;
 		}else{
-			while (current->next!=NULL) {//идем до последнего
-				current=current->next;
-			}
-			current->next=newlink; //последний теперь указывает на новый
-			first->prev=newlink; //голова перемещается на следующий
+			  while (current->next!=NULL){							//идем до последнего
+											current=current->next;
+									  	 }
+			  current->next=newlink; //последний теперь указывает на новый
+			  first->prev=newlink; //голова перемещается на следующий
 
-			newlink->next=NULL; //на новый линкер ставится нуль
-			newlink->prev=current; //на предыдущий ставится последний
+			  newlink->next=NULL; //на новый линкер ставится нуль
+			  newlink->prev=current; //на предыдущий ставится последний
 
-			newlink->data=nova; // на стринг ставится наименование
-			newlink->id=number; // и цифра
-			number++; //смещение на след цифру
+			  newlink->data=nova; // на стринг ставится наименование
+			  newlink->id=number; // и цифра
+
+			  number++; //смещение на след цифру
 		}
 	}
+		void Show(){
+		list *current = first;
+			if(current==NULL){
+								cout<<endl<<endl<<"       Nothing to say"<< endl<< endl;
+							 }
+			else
+				{
+				do {
+					cout<<"Number - " << current->id<<"   "<<current->data<<endl;
+					current=current->next;
+				   } while (current!=NULL);}
+	}
 
+	//---------------------------------------
+	//creating file
+	void CreatFile(){
+						ofstream out;
+						out.open("New List.txt");
+						list *current = first;
+	do{
+		out<<current->data<<"\n";
+		current=current->next;
+	  }
+		while (current!=NULL);
+	
+		out.close();
+	//using file
+	       void UseFile(Bigcube *name){
+												ifstream fin;
+												string str;
+												string paststring;
+
+			fin.open("New List.txt",ios::in);
+			assert (!fin.fail( ));
+
+		while (!fin.eof( )){
+							fin >> str;
+							if(str != paststring){
+													name->Add(str);
+													paststring=str;
+												 }
+		                   }
+							fin.close( );
+	  }
+	//-------------------------
 int main()
 {	
 
