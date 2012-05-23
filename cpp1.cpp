@@ -311,11 +311,14 @@ int main()
 																				cin>>line;//название строки
 																				set->Add(line);//добавление элемента в список
 																				cout << " New Element added"<<endl;
+																				cout << " Press 0 twice to return" << endl;
 																				cout << "------------------------------" << endl;
 																				system("pause");
 																				newi++;
 																				break;
 																				}
+																		case 48: break;
+
 																		
 												};
      
@@ -403,7 +406,6 @@ int main()
 					}
 
 	}
-	
 getch();
 return 0;
 }

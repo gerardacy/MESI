@@ -1,4 +1,4 @@
-﻿Построение начато 23.05.2012 16:53:22.
+﻿Построение начато 23.05.2012 16:58:25.
      1>Проект "C:\Users\-AnY-Gerard\Documents\GitHub\MESI\cpp1.vcxproj" в узле 2 (целевые объекты build).
      1>InitializeBuildStatus:
          Создание ".\Debug\cpp1.unsuccessfulbuild", так как было задано "AlwaysCreate".
@@ -13,17 +13,15 @@
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128): см. объявление "getch"
      1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(267): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128): см. объявление "getch"
-     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(327): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(330): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128): см. объявление "getch"
-     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(329): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(332): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128): см. объявление "getch"
-     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(351): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(354): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128): см. объявление "getch"
-     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(353): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(356): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128): см. объявление "getch"
-     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(407): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128): см. объявление "getch"
-     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(408): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
+     1>c:\users\-any-gerard\documents\github\mesi\cpp1.cpp(409): warning C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _getch. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\conio.h(128): см. объявление "getch"
        ManifestResourceCompile:
          Для всех выходных данных обновления не требуется.
@@ -43,4 +41,4 @@
 
 Построение успешно завершено.
 
-Затраченное время: 00:00:04.17
+Затраченное время: 00:00:04.62
