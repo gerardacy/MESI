@@ -381,7 +381,7 @@ return 0;
 /*fixer
 -Rabotaet show
 -Dobavleno sozdanie faila i extractor pravda ya ne ponimau za4em eto, nujno zapihnut' v file punkt nujno narisovat'
-4tonibud'
+4tonibud's
 -Add String doljen zarabotat' nujno dobavit' vizivateli :)
 -ustranena oshibka so skobkoi (class zakrivaetsya skobkoi i ";")
 */
