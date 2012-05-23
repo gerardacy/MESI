@@ -245,11 +245,14 @@ public:
 	//--------------------------------------MENU-----------------------------------------------//
 int main()
 {	
+
+//-------------------------------------NEW const------------------------//
 	Bigcube *set=new Bigcube;
 	int newi=0;
 	string line;
 	string linenew;
-
+	int id;
+//----------------------------------------------------------------------//
 
 	menu razd[100]; 
 	int K=6; //Количество элементов кароче.
@@ -454,6 +457,28 @@ int main()
 												};
     */ 
 												}
+									if (key1==4)
+												{
+													if (key2==4){
+																switch(z){
+																			case 13: while(F==false)
+																					 {
+																						 cout << "------------------------------" << endl;
+																						 cout << "Edit one element by key" << endl;
+																						 cout << "Write id of element: "<< endl;
+																						 cin >> id;
+																						 cout << "Write a new name: " << endl;
+																						 cin >> linenew;
+																						 set->gedit(id,linenew);
+																						 cout << "-------------------------------" << endl;
+																						 break;
+																					 }
+																			case 48: break;
+																};
+													
+																}
+												}
+
 																
 				}
 
@@ -560,5 +585,6 @@ return 0;
 -----------------------------
 -add by first into developin'
 -edit by key can be work i think cuz it's easy
-
+-edit by key worked but not originally
+-i think need to make id-shower for editin' and block some actions in editin'
 */
