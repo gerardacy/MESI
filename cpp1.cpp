@@ -153,8 +153,8 @@ public:
 						number=1;
 						first=newlink;
 
-						newlink->next=first; //обнуление
-						newlink->prev=NULL; //обнуление
+						newlink->next=first; 
+						newlink->prev=NULL; 
 
 						newlink->data=nova; //дата = днова
 						newlink->id=number; // цифра к днове
@@ -165,11 +165,11 @@ public:
 			  while (current->next!=NULL){							//идем до последнего
 											current=current->next;
 									  	 }
-			  current->next=newlink; //последний теперь указывает на новый
-			  first->prev=newlink; //голова перемещается на следующий
+			  current->next=newlink; 
+			  first->prev=newlink; 
 
-			  newlink->next=NULL; //на новый линкер ставится нуль
-			  newlink->prev=current; //на предыдущий ставится последний
+			  newlink->next=NULL; 
+			  newlink->prev=current; 
 
 			  newlink->data=nova; // на стринг ставится наименование
 			  newlink->id=number; // и цифра
@@ -586,5 +586,5 @@ return 0;
 -add by first into developin'
 -edit by key can be work i think cuz it's easy
 -edit by key worked but not originally
--i think need to make id-shower for editin' and block some actions in editin'
+-i think need to make id-shower for editin' and block some actions in editin' 
 */
