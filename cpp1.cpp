@@ -57,6 +57,30 @@ class Bigcube{
 public:
 	Bigcube():first(NULL){}
 
+
+	//-------------------------------------ADD-by-key------------------------------------------//
+/*	void Add4(int idnew,string nova)
+	{
+		list *current = first; 
+		list *newlink = new list;
+		if (first==NULL){cout << "Add first element before!" << endl;}
+			  while (current->next!=NULL){current->next;
+			if (idnew!=(current->id)){
+			  current->next=newlink; //последний теперь указывает на новый
+			  first->prev=newlink; //голова перемещается на следующий
+
+			  newlink->next=NULL; //на новый линкер ставится нуль
+			  newlink->prev=current; //на предыдущий ставится последний
+			
+			  newlink->data=nova; // на стринг ставится наименование
+			  newlink->id=idnew; // и цифра
+			}}
+			  
+		} */
+
+
+
+
 	//---------------------------------------ADD-IN by last-----------------------------------//
 	
 	void Add(string nova)
@@ -484,8 +508,19 @@ int main()
 																				 break;
 																				 }
 																		case 48: break;
+
 																		
 												};
+
+												if (key2==4)
+															switch (z) {
+															case 13: while(F==false){
+																	cout << "Not Availiable" << endl;
+																	 break;
+																	 }
+												}
+																	 
+
 												if (key2==1)
 															switch (z) {
 																		case 13: while(F==false)
@@ -558,7 +593,16 @@ int main()
 																		 }
 																case 48: break;
 																}; }
-
+													if (key2==2){
+																switch(z){
+																case 13: while(F==false)
+																		 {
+																			cout << "Not Availiable" << endl;
+																			break;
+																		 }
+																}; }
+														
+																	
 									
 																
 												  }
@@ -685,4 +729,5 @@ return 0;
 -edit all checker worked.
 -edit word func added.
 -edit by key rebuild.
+-added titles "Not Availiable"
 */
