@@ -405,6 +405,7 @@ int main()
 				s_i=5;
 				if(s_i==5){
 					NF=true;
+
 					while(NF==true){
 						system("cls");
 			cout << "     Вы уверены, что хотите выйти?" << endl;
@@ -431,14 +432,14 @@ int main()
 				s_i3=0;
 				NF=false;
 				break;
-			}
+			  }
 			if(key3==48){s_i3=0;};
 			if(key3==49){s_i3=1;};
-				}
-					;}
+				 }
+					; }
 				break;
 			
-			} 
+			 } 
 			if(key>48 && key<54){
 				s_i=key-49;
 				}
