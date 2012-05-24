@@ -7,6 +7,10 @@
 #include <fstream>
 #include <iostream>
 #include <assert.h>
+#include <stdio.h>
+#include <sstream>
+#include "windows.h"
+#include <time.h>
 
 using namespace std;
 
@@ -61,25 +65,17 @@ public:
 
 
 
+	//-----------------------------DELETE-ALL-----------------------------------------------//
 void DelAll(){
-		first=NULL;
-		tail=NULL;
-		list* tmp;
-		list* newlink = first;
-		while(newlink!=tail)
-		{
-		tmp = newlink;
-		newlink = newlink->next;
-		free(tmp);
-		}
-		free(newlink);
-		newlink=NULL;
-		first=tail;
-		first=NULL;
-		tail=NULL;
-		cout << "All elements was deleted" << endl;
-		
-	}
+			while(first!=NULL){
+			list *current=first;
+			first=first->next;
+			delete current;
+			}
+			first=NULL;
+		cout << "All elements were deleted" << endl;
+}
+	
 
 	//-------------------------------------ADD-by-key------------------------------------------//
 /*	void Add4(int idnew,string nova)
@@ -190,6 +186,52 @@ void DelAll(){
 			}
 		}
 }
+	/*//------------------------------------------GENERATOR-------------------------------------//
+	void generator(int count) {
+		
+	srand(time(NULL)); 
+	srand(GetTickCount());
+
+	for (int i=0;i<count;i++) {
+		string data="Elem";
+
+		int id;
+		while(1) {
+			id=1+(int)rand()%100; 
+			break;
+		}
+		
+		stringstream temp;
+		temp << id;
+        string iden;
+	    temp >> iden;
+
+		list* tmp = tail;
+
+		if( first == NULL ) 
+		{ // пустой список
+			list* newlink = new(list);
+			first = newlink;
+			tail = newlink;
+			first=tail;
+		}
+		else
+		{ // непустой список
+			tail->next = new(list);
+			tail->next->prev=tail;
+			tail = tail->next;
+		}
+
+		tail->prev=tmp;
+		tail->next=first; // указываем, что это будет последний элемент списка
+		first->prev=tail;
+
+		tail->data=data+iden;
+	}
+}
+
+*/
+
 
 	//--------------------------------------ADD-IN by first---------------------------------//
 	
@@ -228,12 +270,12 @@ void Add3(string nova)
 		void Show(){
 		list *current = first;
 			if(current==NULL){
-								cout<<endl<<endl<<"       Nothing to say"<< endl<< endl;
+								cout<<endl<<endl<<"       Nothing to show, dude"<< endl<< endl;
 							 }
 			else
 				{
 				do {
-					cout<<"Number - " << current->id<<"   "<<current->data<<endl;
+					cout<<"Num - " << current->id<<"   "<<current->data<<endl;
 					current=current->next;
 				   } while (current!=NULL);}
 				}
@@ -243,11 +285,13 @@ void Add3(string nova)
 
 		void gedit(int idnew,string datanew){
 		list *current = first;
+		if (current==NULL){ cout << "Action is not available" << endl;
+							return;}else{
 		do {
 			if(idnew==(current->id)){
 				current->data=datanew;}
 				current=current->next;
-		} while (current!=NULL);
+		} while (current!=NULL);}
 	}
 
 		//----------------------------------------EDIT-by-last-------------------------------------//
@@ -367,24 +411,24 @@ int main()
 
 	for (int i=0;i<K-1;i++)
 		if (key1==i+1) // 0_0 стрелочник 
-						cout << i+1 << " *" << razd[i].name << "*\n";
+						cout << i+1 << "->" << razd[i].name << "\n";
 																	else 
 						cout << i+1 << "  " << razd[i].name << "\n";
 
 	
 
-	if (key1==7) cout << 0 << " *" << razd[5].name << "*\n";
+	if (key1==7) cout << 0 << "->" << razd[5].name << "\n";
 															else 
 			 	cout << 0 << "  " << razd[5].name << "\n";
  
-	razd[0].mass[0]="Back";                                                                                                               //принадлежит структуре с индексом
+	razd[0].mass[0]="Back";                                                                                                               
 
 	razd[1].mass[0]="Back";
 
 	razd[2].mass[0]="First";
 	razd[2].mass[1]="Middle";
 	razd[2].mass[2]="Last";
-	razd[2].mass[3]="By key";
+	razd[2].mass[3]="Randomise";
 	razd[2].mass[4]="Back";
 	
 
@@ -395,7 +439,7 @@ int main()
 	razd[3].mass[4]="Back";
 
 	razd[4].mass[0]="All";
-	razd[4].mass[1]="Middle";
+	razd[4].mass[1]="First";
 	razd[4].mass[2]="Last";
 	razd[4].mass[3]="By Key";
 	razd[4].mass[4]="Back";
@@ -433,29 +477,29 @@ int main()
 						system("cls");
 		
 
-						if (key1==1) cout << "0 *" << razd[0].mass[0] << "*\n";
+						if (key1==1) cout << "0 ->" << razd[0].mass[0] << " \n";
 
 						if (key1==2){
-									cout << "0 *" << razd[1].mass[0] << "*\n";
+									cout << "0 ->" << razd[1].mass[0] << " \n";
 									set -> Show();
 									}		
 
 
 						if (key1==3|| key1==4|| key1==5) {
 															for (int i=0; i<M-1; i++) 
-																						if (key2==i+1)	cout << i+1 << " *" << razd[key1-1].mass[i] << "*\n";
+																						if (key2==i+1)	cout << i+1 << "->" << razd[key1-1].mass[i] << " \n";
 																																							else 
 																										cout << i+1 <<"  " << razd[key1-1].mass[i] << "\n";
 				
-																						if (key2==5)	cout << 0 << " *" << razd[key1-1].mass[4] << "*\n";
+																						if (key2==5)	cout << 0 << "->" << razd[key1-1].mass[4] << " \n";
 																																							else 
 																										cout << 0 << "  " << razd[key1-1].mass[4] << "\n";
 															}
 															
 						key2=1;
-
+						//-----------------------------------------------------------------------------------------------------//
 								do	{
-						if (key1==3|| key1==4|| key1 ==5 || key1 ==6) {
+						if (key1==3|| key1==4|| key1 ==5 ) {
 															z=getch();
 																	if (z==224)
 																				z=getch();
@@ -480,11 +524,11 @@ int main()
 
 						for (int i=0; i<M-1; i++)	
 												if (key2==i+1) 
-																cout << i+1 <<  " *" << razd[key1-1].mass[i] << "*\n";
+																cout << i+1 <<  "->" << razd[key1-1].mass[i] << " \n";
 																													else 
 																cout << i+1 <<  "  " << razd[key1-1].mass[i] << "\n";
 												if (key2==5)
-																cout << 0 << " *" << razd[key1-1].mass[4] << "*\n";
+																cout << 0 << "->" << razd[key1-1].mass[4] << " \n";
 																													else 
 																cout << 0  <<  "  " << razd[key1-1].mass[4] << "\n";
 					
@@ -539,7 +583,8 @@ int main()
 															switch (z) {
 															case 13: while(F==false){
 																	cout << "Not Availiable" << endl;
-																	 break;
+																			break;
+																	
 																	 }
 												}
 																	 
@@ -630,17 +675,49 @@ int main()
 																
 												  }
 									if (key1==5){
-										if (key2==1){
-											switch(z){
-											case 13: while(F==false){
-													cout << "Deleting all elements"<< endl;
-													set->DelAll();
-													cout << "Press 0 to return" << endl;
-													break;
-																	 }
-											case 48: break;
-														}
-													}
+												if (key2==1){
+															switch(z){
+															case 13: while(F==false){
+														    		 cout << "Deleting all elements"<< endl;
+																	 set->DelAll();
+																	 cout << "Press 0 to return" << endl;
+																	 break;
+																					}
+															case 48: break;
+																		}
+																}
+												if (key2==2){
+															switch(z){
+															case 13: while(F==false){
+														    		 cout << "Not Availiable" << endl;
+																			break;
+																					}
+															case 48: break;
+																		}
+																}
+												if (key2==3){
+															switch(z){
+															case 13: while(F==false){
+														    		 cout << "Not Availiable" << endl;
+																			break;
+																					}
+															case 48: break;
+																		}
+																}
+												if (key2==4){
+															switch(z){
+															case 13: while(F==false){
+														    		 cout << "Not Availiable" << endl;
+																			break;
+																					}
+															case 48: break;
+																		}
+																}
+
+
+
+
+
 												}
 
 																
@@ -666,9 +743,9 @@ int main()
 																cout << "\nDude, are u sure?\n"; 
 																	for (int i=0; i<2; i++)	{
 																							if (key2==i+1) 
-																											cout << "  *" << razd[key1-1].mass[i] << "*";
+																											cout << "->" << razd[key1-1].mass[i] << " ";
 																																						else 
-																											cout << "   " << razd[key1-1].mass[i] << "";
+																											cout << "  " << razd[key1-1].mass[i] << " ";
 																							}
 
 						w=getch();
@@ -706,7 +783,7 @@ int main()
 														exit(1);
 														break;
 												}
-					}
+					}  
 				}
 				while (F==false);
 		}
@@ -714,22 +791,22 @@ int main()
 		if (F==true) {
 						system("cls");
 									for (int i=0;i<K-1;i++)
-															if (key1==i+1)
-																			cout << i+1 << " *" << razd[i].name << "*\n";
+															if (key1==i+1){
+																cout << i+1 << "->" << razd[i].name << "\n";}
 																														else 
-																			cout << i+1 << "  " << razd[i].name << "\n";
+																{cout << i+1 << "  " << razd[i].name << "\n";}
 
-															if (key1==6)
-																			cout << 0 << " *" << razd[5].name << "*\n";
-																														else 
-																			cout << 0 << "  " << razd[5].name << "\n";
+															if (key1==6){
+																cout << 0 << "->" << razd[5].name << "\n";}
+																											else{ 
+																cout << 0 << "  " << razd[5].name << "\n";}
 					}
 		}
 	
 	getch();
 return 0;
 }
-/* Note of fixes
+/* ------------------------------------------------------Note of fixes-----------------------------------------------------------
 -Rabotaet show
 -Dobavleno sozdanie faila i extractor pravda ya ne ponimau za4em eto, nujno zapihnut' v file punkt nujno narisovat'
 4tonibud's
@@ -768,4 +845,7 @@ return 0;
 -added titles "Not Availiable"
 -------------------------------
 -Delete all func worked.
+-added titels "Not availiable"
+-exit worked
+-stars changed on arrows.
 */
