@@ -56,7 +56,30 @@ class Bigcube{
 	int number;
 public:
 	Bigcube():first(NULL){}
+	
 
+
+
+
+void DelAll(){
+		first=NULL;
+		tail=NULL;
+		list* tmp;
+		list* newlink = first;
+		while(newlink!=tail)
+		{
+		tmp = newlink;
+		newlink = newlink->next;
+		free(tmp);
+		}
+		free(newlink);
+		newlink=NULL;
+		first=tail;
+		first=NULL;
+		tail=NULL;
+		cout << "All elements was deleted" << endl;
+		
+	}
 
 	//-------------------------------------ADD-by-key------------------------------------------//
 /*	void Add4(int idnew,string nova)
@@ -371,7 +394,7 @@ int main()
 	razd[3].mass[3]="By key";
 	razd[3].mass[4]="Back";
 
-	razd[4].mass[0]="First";
+	razd[4].mass[0]="All";
 	razd[4].mass[1]="Middle";
 	razd[4].mass[2]="Last";
 	razd[4].mass[3]="By Key";
@@ -606,6 +629,19 @@ int main()
 									
 																
 												  }
+									if (key1==5){
+										if (key2==1){
+											switch(z){
+											case 13: while(F==false){
+													cout << "Deleting all elements"<< endl;
+													set->DelAll();
+													cout << "Press 0 to return" << endl;
+													break;
+																	 }
+											case 48: break;
+														}
+													}
+												}
 
 																
 				}
@@ -626,7 +662,7 @@ int main()
 																										}
 																		}
 
-												if (key1==7) {
+												if (key1==6) {
 																cout << "\nDude, are u sure?\n"; 
 																	for (int i=0; i<2; i++)	{
 																							if (key2==i+1) 
@@ -730,4 +766,6 @@ return 0;
 -edit word func added.
 -edit by key rebuild.
 -added titles "Not Availiable"
+-------------------------------
+-Delete all func worked.
 */
