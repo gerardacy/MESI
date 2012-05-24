@@ -14,6 +14,72 @@
 
 using namespace std;
 
+
+
+
+void fixes(){
+cout << "----------------------------------- Note of fixes--------------------------------------------------------------------------" << endl;
+cout << "-Rabotaet show" << endl;
+cout << "-Dobavleno sozdanie faila i extractor pravda ya ne ponimau za4em eto, nujno zapihnut' v file punkt nujno narisovat' 4tonibud's" << endl;
+cout << "-Add String doljen zarabotat' nujno dobavit' vizivateli :)" << endl;
+cout << "-ustranena oshibka so skobkoi (class zakrivaetsya skobkoi i " << endl;
+cout << "-------------------------" << endl;
+cout << "-add string rabotaet no nujno eshe podkorrektirovat' cikl" << endl;
+cout << "-show rabotaet otli4no" << endl;
+cout << "-nujno vpisat' ru language" << endl;
+cout << "-add func by first can return" << endl;
+cout << "-first complete" << endl;
+cout << "-----------------------------" << endl;
+cout << "-add by middle func added." << endl;
+cout << "-need to write this func in case for key2=1, if i'm right." << endl;
+cout << "-add first - changed into add last" << endl;
+cout << "-add middle worked 100%		" << endl;
+cout << "-----------------------------" << endl;
+cout << "-add by first into developin'" << endl;
+cout << "-edit by key can be work i think cuz it's easy !!!!!!!!!!!!!!!!!!11" << endl;
+cout << "-edit by key worked but not originally !!!!!!!!!!!!" << endl;
+cout << "-i think need to make id-shower for editin' and block some actions in editin' " << endl;
+cout << "--------------------------" << endl;
+cout << "-edit by first worked 100% but need i think checker !!!!!!!!!!!!!!!!!!!!!!" << endl;
+cout << "-edit by first is not allowed when number>1" << endl;
+cout << "-edit by first worked 100% now but need something like return button;" << endl;
+cout << "-titles was edited" << endl;
+cout << "-eedit by first changed on edit by last" << endl;
+cout << "------------------------------" << endl;
+cout << "-edit by first changed on edit all" << endl;
+cout << "-NEED checked!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!" << endl;
+cout << "-NEED id writer..." << endl;
+cout << "------------------------------" << endl;
+cout << "-edit all checker worked." << endl;
+cout << "-edit word func added." << endl;
+cout << "-edit by key rebuild." << endl;
+cout << "-added titles Not Availiable" << endl;
+cout << "-------------------------------" << endl;
+cout << "-Delete all func worked." << endl;
+cout << "-exit func worked." << endl;
+cout << "-stars changed on arrows" << endl;
+cout << "-file system worked" << endl;
+cout << "-the repo network graph merged" << endl;
+cout << "-titles added" << endl;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //Введение структуры
 struct menu	{  // Название структуры
 	string name; // названия разделов @_@
@@ -106,31 +172,31 @@ void DelAll(){
 	{
 		list *current = first; 
 		list *newlink = new list;
-		if (first==NULL){  
+		if (first==NULL){  //если первый добавляем // 
 						number=1;
 						first=newlink;
 
-						newlink->next=NULL; 
-						newlink->prev=NULL; 
+						newlink->next=NULL; //обнуление
+						newlink->prev=NULL; //обнуление
 
-						newlink->data=nova; 
-						newlink->id=number; 
+						newlink->data=nova; //дата = днова
+						newlink->id=number; // цифра к днове
 
 						number++;
 		}else{
-			  while (current->next!=NULL){							
+			  while (current->next!=NULL){							//идем до последнего
 											current=current->next;
 									  	 }
-			  current->next=newlink; 
-			  first->prev=newlink; 
+			  current->next=newlink; //последний теперь указывает на новый
+			  first->prev=newlink; //голова перемещается на следующий
 
-			  newlink->next=NULL; 
-			  newlink->prev=current; 
+			  newlink->next=NULL; //на новый линкер ставится нуль
+			  newlink->prev=current; //на предыдущий ставится последний
 
-			  newlink->data=nova; 
-			  newlink->id=number; 
+			  newlink->data=nova; // на стринг ставится наименование
+			  newlink->id=number; // и цифра
 
-			  number++; 
+			  number++; //смещение на след цифру
 		}
 	}
 
@@ -247,11 +313,11 @@ void Add3(string nova)
 						number=1;
 						first=newlink;
 
-						newlink->next=NULL; 
-						newlink->prev=NULL;
+						newlink->next=NULL; //обнуление
+						newlink->prev=NULL; //обнуление
 
-						newlink->data=nova; 
-						newlink->id=number; 
+						newlink->data=nova; //дата = днова
+						newlink->id=number; // цифра к днове
 
 						number++;
 		}else{
@@ -348,16 +414,18 @@ void Add3(string nova)
 	  
 	//---------------------------------------FILE-----------------------------------------------//
 	void CreateFile(){
+		list *current = first;
+		if (current==NULL){ cout << "Action is not available" << endl;
+							return;}else{
 						ofstream out;
 						out.open("New List.txt");
-						list *current = first;
 										do{
 											out<<current->data<<"\n";
 											current=current->next;
 										  }
 											while (current!=NULL);
-	
-												out.close();
+							
+											out.close();}
 	}
 	void UseFile(Bigcube *name)
 									{
@@ -421,7 +489,11 @@ int main()
 															else 
 			 	cout << 0 << "  " << razd[5].name << "\n";
  
-	razd[0].mass[0]="Back";                                                                                                               
+	razd[0].mass[0]="Save";                                                                                                               
+	razd[0].mass[1]="Load";
+	razd[0].mass[2]="Fixes";
+	razd[0].mass[3]="Creators";
+	razd[0].mass[4]="Back";
 
 	razd[1].mass[0]="Back";
 
@@ -477,7 +549,9 @@ int main()
 						system("cls");
 		
 
-						if (key1==1) cout << "0 ->" << razd[0].mass[0] << " \n";
+				//		if (key1==1) cout << "0 ->" << razd[0].mass[0] << " \n";
+						
+
 
 						if (key1==2){
 									cout << "0 ->" << razd[1].mass[0] << " \n";
@@ -485,7 +559,7 @@ int main()
 									}		
 
 
-						if (key1==3|| key1==4|| key1==5) {
+						if (key1==1 || key1==3|| key1==4|| key1==5) {
 															for (int i=0; i<M-1; i++) 
 																						if (key2==i+1)	cout << i+1 << "->" << razd[key1-1].mass[i] << " \n";
 																																							else 
@@ -499,7 +573,7 @@ int main()
 						key2=1;
 						//-----------------------------------------------------------------------------------------------------//
 								do	{
-						if (key1==3|| key1==4|| key1 ==5 ) {
+						if (key1 == 1 || key1==3|| key1==4|| key1 ==5 ) {
 															z=getch();
 																	if (z==224)
 																				z=getch();
@@ -513,7 +587,67 @@ int main()
 																							default:
 																									break;
 																							}
-//круг
+								//----------------------------------------------//
+						if (key1==1){
+									if (key2==1){
+												switch(z) {	
+												case 13: while(F==false){cout << "Saving project" << endl;
+																		set->CreateFile();
+																		 cout << "Saved" << endl;
+																		 cout << "Press enter to return" << endl;
+																		 system ("pause");
+																		 break;
+																		}
+												case 48: break;
+															}
+												}
+									if (key2==2){
+												switch(z) {	
+												case 13: while(F==false){cout << "Loading project" << endl;
+																		set->DelAll();
+																		set->UseFile(set);
+																		 cout << "Loaded" << endl;
+																		 cout << "Press enter to return" << endl;
+																		 system ("pause");
+																		 break;
+																		}
+												case 48: break;
+															}
+												}
+									if (key2==3){
+												switch(z) {	
+												case 13: while(F==false){cout << "Notes about fixes" << endl;
+																		 
+																		fixes();
+																		 system ("pause");
+																		 break;
+																		}
+												case 48:  
+															break;
+															}
+
+												}
+									if (key2==4){
+												switch(z) {	
+												case 13: while(F==false){cout << "Creators" << endl;
+																		cout << "----------------------------"<< endl;
+																		 cout << "Name: Pham An Ton" << endl;
+																		  cout << "Group: DKI-103" << endl;
+																		 cout << "----------------------------" << endl;
+																		 cout << "Name: Vi Ngok Tien" << endl;
+																		 cout << "Group: DKI-103" << endl;
+																		 cout << "----------------------------"<< endl;
+																		 system ("pause");
+																		 break;
+																		}
+												case 48:  
+															break;
+															}
+
+												}
+						}
+
+//****************************************************//
 						if (key2>M)
 									key2=1;
 						if (key2<1)
@@ -723,7 +857,7 @@ int main()
 																
 				}
 
-												if (key1==1|| key1==2) {
+												if (key1==2) {
 																		y=getch();
 																				if (y==224)
 																							y=getch();
@@ -806,46 +940,4 @@ int main()
 	getch();
 return 0;
 }
-/* ------------------------------------------------------Note of fixes-----------------------------------------------------------
--Rabotaet show
--Dobavleno sozdanie faila i extractor pravda ya ne ponimau za4em eto, nujno zapihnut' v file punkt nujno narisovat'
-4tonibud's
--Add String doljen zarabotat' nujno dobavit' vizivateli :)
--ustranena oshibka so skobkoi (class zakrivaetsya skobkoi i ";")
--------------------------
--add string rabotaet no nujno eshe podkorrektirovat' cikl
--show rabotaet otli4no
--nujno vpisat' ru language
--add func by first can return
--first complete
------------------------------
--add by middle func added.
--need to write this func in case for key2=1, if i'm right.
--add first - changed into add last
--add middle worked 100%		
------------------------------
--add by first into developin'
--edit by key can be work i think cuz it's easy !!!!!!!!!!!!!!!!!!11
--edit by key worked but not originally !!!!!!!!!!!!
--i think need to make id-shower for editin' and block some actions in editin' 
---------------------------
--edit by first worked 100% but need i think checker !!!!!!!!!!!!!!!!!!!!!!
--edit by first is not allowed when number>1
--edit by first worked 100% now but need something like return button;
--titles was edited
--eedit by first changed on edit by last
-------------------------------
--edit by first changed on edit all
--NEED checked!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
--NEED id writer...
-------------------------------
--edit all checker worked.
--edit word func added.
--edit by key rebuild.
--added titles "Not Availiable"
--------------------------------
--Delete all func worked.
--added titels "Not availiable"
--exit worked
--stars changed on arrows.
-*/
+
