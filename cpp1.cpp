@@ -61,6 +61,7 @@ cout << "-stars changed on arrows" << endl;
 cout << "-file system worked" << endl;
 cout << "-the repo network graph merged" << endl;
 cout << "-titles added" << endl;
+cout << "-ANTON CHANGED HIS AVATAR ON GITHUB.COM"<< endl;
 }
 
 
