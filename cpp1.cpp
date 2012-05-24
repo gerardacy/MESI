@@ -106,31 +106,31 @@ void DelAll(){
 	{
 		list *current = first; 
 		list *newlink = new list;
-		if (first==NULL){  //если первый добавляем // 
+		if (first==NULL){  
 						number=1;
 						first=newlink;
 
-						newlink->next=NULL; //обнуление
-						newlink->prev=NULL; //обнуление
+						newlink->next=NULL; 
+						newlink->prev=NULL; 
 
-						newlink->data=nova; //дата = днова
-						newlink->id=number; // цифра к днове
+						newlink->data=nova; 
+						newlink->id=number; 
 
 						number++;
 		}else{
-			  while (current->next!=NULL){							//идем до последнего
+			  while (current->next!=NULL){							
 											current=current->next;
 									  	 }
-			  current->next=newlink; //последний теперь указывает на новый
-			  first->prev=newlink; //голова перемещается на следующий
+			  current->next=newlink; 
+			  first->prev=newlink; 
 
-			  newlink->next=NULL; //на новый линкер ставится нуль
-			  newlink->prev=current; //на предыдущий ставится последний
+			  newlink->next=NULL; 
+			  newlink->prev=current; 
 
-			  newlink->data=nova; // на стринг ставится наименование
-			  newlink->id=number; // и цифра
+			  newlink->data=nova; 
+			  newlink->id=number; 
 
-			  number++; //смещение на след цифру
+			  number++; 
 		}
 	}
 
@@ -247,11 +247,11 @@ void Add3(string nova)
 						number=1;
 						first=newlink;
 
-						newlink->next=NULL; //обнуление
-						newlink->prev=NULL; //обнуление
+						newlink->next=NULL; 
+						newlink->prev=NULL;
 
-						newlink->data=nova; //дата = днова
-						newlink->id=number; // цифра к днове
+						newlink->data=nova; 
+						newlink->id=number; 
 
 						number++;
 		}else{
