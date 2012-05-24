@@ -218,20 +218,27 @@ void Add3(string nova)
 
 	//---------------------------------------------EDIT-by-first----------------------------------------//
 
-	void gedit4(string datanew)
-		{
-// if (current==NULL){ cout << "Action is not available" << endl;	break;}
-		list *current = NULL;
-		
-		current->next=NULL;
-		current->data=datanew;
-		
+/*	void gedit4(string datanew)
+			{
 
-		}
+			list *current = first;
+
+			int amount=0;
+			while (current)//идем до конца чтобы сосчитать 
+			{
+				amount++;
+				current=current->next;
+			}
+			current=first;
+			
+			current=amount;
+			current->data=datanew;
+
+			} */
 		
 	
 	
-	/*	void gedit3(string datanew)
+		void gedit4(string datanew)
 		{
 // if (current==NULL){ cout << "Action is not available" << endl;	break;}
 		list *current = first;
@@ -240,7 +247,7 @@ void Add3(string nova)
 		current=current->next;
 		}while (current!=NULL);
 
-		}*/
+		}
 	  
 	//---------------------------------------FILE-----------------------------------------------//
 	void CreateFile(){
@@ -328,7 +335,7 @@ int main()
 	razd[2].mass[4]="Back";
 	
 
-	razd[3].mass[0]="First";
+	razd[3].mass[0]="All";
 	razd[3].mass[1]="Middle";
 	razd[3].mass[2]="Last";
 	razd[3].mass[3]="By key";
@@ -534,7 +541,7 @@ int main()
 																case 13: while(F==false)
 																		 {
 																			cout << "------------------------------" << endl;
-																			cout << "Edit first element" << endl;
+																			cout << "Edit all elements" << endl;
 																			cout << "Write a new name: " << endl;
 																			cin >> linenew;
 																			set->gedit4(linenew);
@@ -664,4 +671,8 @@ return 0;
 -edit by first worked 100% now but need something like return button;
 -titles was edited
 -eedit by first changed on edit by last
+------------------------------
+-edit by first changed on edit all
+-NEED checked!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+-NEED id writer...
 */
