@@ -615,4 +615,5 @@ return 0;
 -i think need to make id-shower for editin' and block some actions in editin' 
 --------------------------
 -edit by first worked 100% but need i think checker !!!!!!!!!!!!!!!!!!!!!!
+-edit by first is not allowed when number>1
 */
