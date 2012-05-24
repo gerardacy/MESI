@@ -196,14 +196,13 @@ void Add3(string nova)
 
 		void gedit(int idnew,string datanew){
 		list *current = first;
-				if (current==NULL){ cout << "Action is not available" << endl;
-							return;}else{
-
 		do {
 			if(idnew==(current->id)){
 				current->data=datanew;}
-		cout << "Element edited"<<endl;} while (current==first);}
+				current=current->next;
+		} while (current!=NULL);
 	}
+
 		//----------------------------------------EDIT-by-last-------------------------------------//
 
 	
@@ -252,9 +251,8 @@ void Add3(string nova)
 		do {
 		current->data=datanew;
 		current=current->next;
-		cout << "Element edited"<<endl;
 		}while (current!=NULL);
-							}
+			cout << "Element edited"<<endl;				}
 		}
 	  
 	//---------------------------------------FILE-----------------------------------------------//
@@ -686,4 +684,5 @@ return 0;
 ------------------------------
 -edit all checker worked.
 -edit word func added.
+-edit by key rebuild.
 */
