@@ -201,7 +201,7 @@ void Add3(string nova)
 				current->data=datanew;}
 		} while (current==first);
 	}
-		//----------------------------------------EDIT-by-first-------------------------------------//
+		//----------------------------------------EDIT-by-last-------------------------------------//
 
 	
 
@@ -212,6 +212,19 @@ void Add3(string nova)
 		
 		current->data=datanew;
 		current=current->next;
+		
+
+		}
+
+	//---------------------------------------------EDIT-by-first----------------------------------------//
+
+	void gedit4(string datanew)
+		{
+// if (current==NULL){ cout << "Action is not available" << endl;	break;}
+		list *current = NULL;
+		
+		current->next=NULL;
+		current->data=datanew;
 		
 
 		}
@@ -500,18 +513,34 @@ int main()
 																					 }
 																			case 48: break;
 																}; }
-													if (key2==1){
+													if (key2==3){
 																switch(z){
 																case 13: while(F==false)
 																		 {
 																			cout << "------------------------------" << endl;
-																			cout << "Edit first element"<< endl;
+																			cout << "Edit last element"<< endl;
 																			cout << "Write a new name: " << endl;
 																				cin >> linenew;
 																			set->gedit2(linenew);
 																			cout << " Element edited"<<endl;
 																			cout << " Press 0 to return / Enter to continue" << endl;
 																			cout << "-----------------------------" << endl;
+																			break;
+																		 }
+																case 48: break;
+																}; }
+													if (key2==1){
+																switch(z){
+																case 13: while(F==false)
+																		 {
+																			cout << "------------------------------" << endl;
+																			cout << "Edit first element" << endl;
+																			cout << "Write a new name: " << endl;
+																			cin >> linenew;
+																			set->gedit4(linenew);
+																			cout << "Element edited"<<endl;
+																			cout << "Press 0 to return / Enter to continue" << endl;
+																			cout << "------------------------------" << endl;
 																			break;
 																		 }
 																case 48: break;
@@ -634,4 +663,5 @@ return 0;
 -edit by first is not allowed when number>1
 -edit by first worked 100% now but need something like return button;
 -titles was edited
+-eedit by first changed on edit by last
 */
