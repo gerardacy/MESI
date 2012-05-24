@@ -196,10 +196,13 @@ void Add3(string nova)
 
 		void gedit(int idnew,string datanew){
 		list *current = first;
+				if (current==NULL){ cout << "Action is not available" << endl;
+							return;}else{
+
 		do {
 			if(idnew==(current->id)){
 				current->data=datanew;}
-		} while (current==first);
+		cout << "Element edited"<<endl;} while (current==first);}
 	}
 		//----------------------------------------EDIT-by-last-------------------------------------//
 
@@ -207,11 +210,14 @@ void Add3(string nova)
 
 	void gedit2(string datanew)
 		{
-// if (current==NULL){ cout << "Action is not available" << endl;	break;}
 		list *current = first;
 		
+			if (current==NULL){ cout << "Action is not available" << endl;
+							return;}else{
+
 		current->data=datanew;
 		current=current->next;
+		cout << "Element edited"<<endl;				}
 		
 
 		}
@@ -240,13 +246,15 @@ void Add3(string nova)
 	
 		void gedit4(string datanew)
 		{
-// if (current==NULL){ cout << "Action is not available" << endl;	break;}
 		list *current = first;
+		if (current==NULL){ cout << "Action is not available" << endl;
+							return;}else{
 		do {
 		current->data=datanew;
 		current=current->next;
+		cout << "Element edited"<<endl;
 		}while (current!=NULL);
-
+							}
 		}
 	  
 	//---------------------------------------FILE-----------------------------------------------//
@@ -448,12 +456,12 @@ int main()
 																		case 13:
 																				while(F==false){
 																				cout << "------------------------------" << endl;
-																				cout << " Add one new last element" << endl;
-																				cout << " New Element's Name:";
+																				cout << "Add one new last element" << endl;
+																				cout << "New Element's Name:";
 																				cin>>line;//название строки
 																				set->Add(line);//добавление элемента в список
-																				cout << " New Element added"<<endl;
-																				cout << " Press 0 to return / Enter to continue" << endl;
+																				cout << "New Element added"<<endl;
+																				cout << "Press 0 to return / Enter to continue" << endl;
 																				cout << "------------------------------" << endl;
 																			//	system("pause");
 																				newi++;
@@ -466,12 +474,12 @@ int main()
 																		case 13: while(F==false)
 																				 {
 																				cout << "------------------------------" << endl;
-																				cout << " Add one new middle element" << endl;																				cout << " Add one new element" << endl;
-																				cout << " New Element's Name:";
+																				cout << "Add one new middle element" << endl;																				cout << " Add one new element" << endl;
+																				cout << "New Element's Name:";
 																				cin>>line;//название строки
 																				set->Add2(line);//добавление элемента в список
-																				cout << " New Element added"<<endl;
-																				cout << " Press 0 to return / Enter to continue" << endl;
+																				cout << "New Element added"<<endl;
+																				cout << "Press 0 to return / Enter to continue" << endl;
 																				cout << "------------------------------" << endl;
 																				//system("pause");
 																				newi++;
@@ -485,12 +493,12 @@ int main()
 																		case 13: while(F==false)
 																				 {
 																				cout << "------------------------------" << endl;
-																				cout << " Add one new first element" << endl;																				cout << " Add one new element" << endl;
-																				cout << " New Element's Name:";
+																				cout << "Add one new first element" << endl;																				cout << " Add one new element" << endl;
+																				cout << "New Element's Name:";
 																				cin>>line;//название строки
 																				set->Add3(line);//добавление элемента в список
-																				cout << " New Element added"<<endl;
-																				cout << " Press 0 to return / Enter to continue" << endl;
+																				cout << "New Element added"<<endl;
+																				cout << "Press 0 to return / Enter to continue" << endl;
 																				cout << "------------------------------" << endl;
 																				//system("pause");
 																				newi++;
@@ -513,7 +521,7 @@ int main()
 																						 cout << "Write a new name: " << endl;
 																						 cin >> linenew;
 																						 set->gedit(id,linenew);
-																						 cout << " Element edited"<<endl;
+																						// cout << " Element edited"<<endl;
 																						cout << " Press 0 to return / Enter to continue" << endl;
 																						 cout << "-------------------------------" << endl;
 																						 break;
@@ -529,8 +537,8 @@ int main()
 																			cout << "Write a new name: " << endl;
 																				cin >> linenew;
 																			set->gedit2(linenew);
-																			cout << " Element edited"<<endl;
-																			cout << " Press 0 to return / Enter to continue" << endl;
+																		//	cout << " Element edited"<<endl;
+																			cout << "Press 0 to return / Enter to continue" << endl;
 																			cout << "-----------------------------" << endl;
 																			break;
 																		 }
@@ -545,7 +553,7 @@ int main()
 																			cout << "Write a new name: " << endl;
 																			cin >> linenew;
 																			set->gedit4(linenew);
-																			cout << "Element edited"<<endl;
+																		//	cout << "Element edited"<<endl;
 																			cout << "Press 0 to return / Enter to continue" << endl;
 																			cout << "------------------------------" << endl;
 																			break;
@@ -675,4 +683,7 @@ return 0;
 -edit by first changed on edit all
 -NEED checked!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 -NEED id writer...
+------------------------------
+-edit all checker worked.
+-edit word func added.
 */
