@@ -433,7 +433,7 @@ int main()
 																				cin>>line;//название строки
 																				set->Add(line);//добавление элемента в список
 																				cout << " New Element added"<<endl;
-																				cout << " Press 0 twice to return" << endl;
+																				cout << " Press 0 to return / Enter to continue" << endl;
 																				cout << "------------------------------" << endl;
 																			//	system("pause");
 																				newi++;
@@ -451,7 +451,7 @@ int main()
 																				cin>>line;//название строки
 																				set->Add2(line);//добавление элемента в список
 																				cout << " New Element added"<<endl;
-																				cout << " Press 0 twice to return" << endl;
+																				cout << " Press 0 to return / Enter to continue" << endl;
 																				cout << "------------------------------" << endl;
 																				//system("pause");
 																				newi++;
@@ -470,7 +470,7 @@ int main()
 																				cin>>line;//название строки
 																				set->Add3(line);//добавление элемента в список
 																				cout << " New Element added"<<endl;
-																				cout << " Press 0 twice to return" << endl;
+																				cout << " Press 0 to return / Enter to continue" << endl;
 																				cout << "------------------------------" << endl;
 																				//system("pause");
 																				newi++;
@@ -493,6 +493,8 @@ int main()
 																						 cout << "Write a new name: " << endl;
 																						 cin >> linenew;
 																						 set->gedit(id,linenew);
+																						 cout << " Element edited"<<endl;
+																						cout << " Press 0 to return / Enter to continue" << endl;
 																						 cout << "-------------------------------" << endl;
 																						 break;
 																					 }
@@ -507,6 +509,8 @@ int main()
 																			cout << "Write a new name: " << endl;
 																				cin >> linenew;
 																			set->gedit2(linenew);
+																			cout << " Element edited"<<endl;
+																			cout << " Press 0 to return / Enter to continue" << endl;
 																			cout << "-----------------------------" << endl;
 																			break;
 																		 }
@@ -629,4 +633,5 @@ return 0;
 -edit by first worked 100% but need i think checker !!!!!!!!!!!!!!!!!!!!!!
 -edit by first is not allowed when number>1
 -edit by first worked 100% now but need something like return button;
+-titles was edited
 */
