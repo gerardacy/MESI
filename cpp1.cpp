@@ -192,19 +192,30 @@ void Add3(string nova)
 				}
 	
 
-	//---------------------------------------EDIT---------------------------------------------//
+	//---------------------------------------EDIT-by-key-------------------------------------------//
 
 		void gedit(int idnew,string datanew){
 		list *current = first;
 		do {
 			if(idnew==(current->id)){
 				current->data=datanew;}
-				current=current->next;
-		} while (current!=NULL);
+		} while (current==first);
 	}
 
+	//----------------------------------------EDIT-by-first-------------------------------------//
 
-  
+	
+		void gedit2(int idnew,string datanew)
+		{
+// if (current==NULL){ cout << "Action is not available" << endl;	break;}
+		list *current = first;
+		do {
+		if(idnew==(current->id)){current->data=datanew;
+		current=current->next;}
+		}while (current!=NULL);
+
+		}
+	  
 	//---------------------------------------FILE-----------------------------------------------//
 	void CreateFile(){
 						ofstream out;
@@ -473,10 +484,26 @@ int main()
 																						 break;
 																					 }
 																			case 48: break;
-																};
-													
-																}
-												}
+																}; }
+													if (key2==1){
+																switch(z){
+																case 13: while(F==false)
+																		 {
+																			cout << "------------------------------" << endl;
+																			cout << "Edit first element"<< endl;
+																			id = 1;
+																			cout << "Write a new name: " << endl;
+																				cin >> linenew;
+																			set->gedit2(id,linenew);
+																			cout << "-----------------------------" << endl;
+																			break;
+																		 }
+																case 48: break;
+																}; }
+
+									
+																
+												  }
 
 																
 				}
@@ -583,7 +610,9 @@ return 0;
 -add middle worked 100%		
 -----------------------------
 -add by first into developin'
--edit by key can be work i think cuz it's easy
--edit by key worked but not originally
+-edit by key can be work i think cuz it's easy !!!!!!!!!!!!!!!!!!11
+-edit by key worked but not originally !!!!!!!!!!!!
 -i think need to make id-shower for editin' and block some actions in editin' 
+--------------------------
+-edit by first worked 100% but need i think checker !!!!!!!!!!!!!!!!!!!!!!
 */
