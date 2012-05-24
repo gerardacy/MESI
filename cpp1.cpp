@@ -201,20 +201,33 @@ void Add3(string nova)
 				current->data=datanew;}
 		} while (current==first);
 	}
-
-	//----------------------------------------EDIT-by-first-------------------------------------//
+		//----------------------------------------EDIT-by-first-------------------------------------//
 
 	
-		void gedit2(int idnew,string datanew)
+
+	void gedit2(string datanew)
+		{
+// if (current==NULL){ cout << "Action is not available" << endl;	break;}
+		list *current = first;
+		
+		current->data=datanew;
+		current=current->next;
+		
+
+		}
+		
+	
+	
+	/*	void gedit3(string datanew)
 		{
 // if (current==NULL){ cout << "Action is not available" << endl;	break;}
 		list *current = first;
 		do {
-		if(idnew==(current->id)){current->data=datanew;
-		current=current->next;}
+		current->data=datanew;
+		current=current->next;
 		}while (current!=NULL);
 
-		}
+		}*/
 	  
 	//---------------------------------------FILE-----------------------------------------------//
 	void CreateFile(){
@@ -491,10 +504,9 @@ int main()
 																		 {
 																			cout << "------------------------------" << endl;
 																			cout << "Edit first element"<< endl;
-																			id = 1;
 																			cout << "Write a new name: " << endl;
 																				cin >> linenew;
-																			set->gedit2(id,linenew);
+																			set->gedit2(linenew);
 																			cout << "-----------------------------" << endl;
 																			break;
 																		 }
@@ -616,4 +628,5 @@ return 0;
 --------------------------
 -edit by first worked 100% but need i think checker !!!!!!!!!!!!!!!!!!!!!!
 -edit by first is not allowed when number>1
+-edit by first worked 100% now but need something like return button;
 */
