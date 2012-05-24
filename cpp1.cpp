@@ -17,18 +17,16 @@ struct menu	{  // Название структуры
 };
 /*-----------------------------------------------------------------------------------------------
 a2b1c1 d3e1 d2e2
-a2b1c2 d2e1 d2e3
-
 a2 = двунаправленны
 b1 = без голого элемента
 c1 = не кольцевой
-c2 = кольцевой
 
-d3 = удаление/ e1 = первого (по ключу)
-d2 = редактировать/ e1 = первый
+d3 = удаление  
+e1 = первого (по ключу)
 
-d2 = редактирование/ e2 = по ключу 
-d2 = редактирование/ e3 = средний
+d2 = редактирование
+e2 = по ключу 
+
 
 d1 = добавление
 e3 = добавление по среднему
@@ -374,7 +372,6 @@ int main()
 																							default:
 																									break;
 																							}
-						
 //круг
 						if (key2>M)
 									key2=1;
@@ -400,7 +397,7 @@ int main()
 																				F=true;
 																				key2=1;
 																				break;
-												
+																		}
 									if (key1==3){
 												if (key2==3)
 															switch (z) {
@@ -414,12 +411,11 @@ int main()
 																				cout << " New Element added"<<endl;
 																				cout << " Press 0 twice to return" << endl;
 																				cout << "------------------------------" << endl;
-																				//system("pause");
+																			//	system("pause");
 																				newi++;
 																				break;
 																				}
-																		case 48: 
-																				break;
+																		case 48: break;
 												};
 												if (key2==2)
 															switch (z) {
@@ -437,8 +433,7 @@ int main()
 																				newi++;
 																				 break;
 																				 }
-																		case 48: 
-																			     break;
+																		case 48: break;
 																		
 												};
 												if (key2==1)
@@ -457,11 +452,9 @@ int main()
 																				newi++;
 																				 break;
 																				 }
-																		case 48: 
-																			      break;
+																		case 48: break;
 												};
-												
-    
+     
 												}
 									if (key1==4)
 												{
@@ -503,53 +496,56 @@ int main()
 																												break;
 																										}
 																		}
-												//--------------rebuild these, man---------------//
-												if (key1==6) {
+
+												if (key1==7) {
 																cout << "\nDude, are u sure?\n"; 
 																	for (int i=0; i<2; i++)	{
 																							if (key2==i+1) 
 																											cout << "  *" << razd[key1-1].mass[i] << "*";
 																																						else 
-																											cout << "   " << razd[key1-1].mass[i] << " ";
+																											cout << "   " << razd[key1-1].mass[i] << "";
 																							}
 
-																		//w=getch();
-																				if (w==224)
-																		w=getch();
-																				switch (w) {
-																							case 77:
-																									key2++;
-																									break;
-																							case 75:
-																									key2--;
-																									break;
-																							}
+						w=getch();
+						if (w==224)
+									w=getch();
+						switch (w) {
+									case 77:
+											key2++;
+											break;
+									case 75:
+											key2--;
+											break;
+									}
 
-	
-																		if (key2>2) key2=1;
-																		if (key2<1) key2=2;
-																		system ("cls");
 
-																		if (key2==2) 
-																					switch (w) {
-																					case 13:
-																					F=true;
-																					key2=1;
-																					break;
-																								}
+						if (key2>2)
+									key2=1;
+						if (key2<1)
+									key2=2;
+
+						system ("cls");
+
+						if (key2==2) 
+									switch (w) {
+												case 13:
+														F=true;
+														key2=1;
+														break;
+												}
 					
-																					else
-																		if (key2==1) 
-																					switch (w) {
-																					case 13:
-																					exit(1);
-																					break;
-																								}
-																		}
+																else
+						if (key2==1) 
+									switch (w) {
+												case 13:
+														exit(1);
+														break;
+												}
+					}
 				}
 				while (F==false);
 		}
-		
+
 		if (F==true) {
 						system("cls");
 									for (int i=0;i<K-1;i++)
@@ -568,8 +564,7 @@ int main()
 	getch();
 return 0;
 }
-/*------------------------------------------------- Note of fixes------------------------------------------------
------------------------------------------------------------------------------------------------------------------
+/* Note of fixes
 -Rabotaet show
 -Dobavleno sozdanie faila i extractor pravda ya ne ponimau za4em eto, nujno zapihnut' v file punkt nujno narisovat'
 4tonibud's
@@ -591,6 +586,4 @@ return 0;
 -edit by key can be work i think cuz it's easy
 -edit by key worked but not originally
 -i think need to make id-shower for editin' and block some actions in editin' 
--exit func was broken
--add funcs without twice clickin' on zero
 */
